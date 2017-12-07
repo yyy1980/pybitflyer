@@ -208,6 +208,15 @@ class API(object):
         endpoint = "/v1/me/getcollateral"
         return self.request(endpoint, params=params)
 
+#@yyy1980
+    def getcollateralaccounts(self, **params):
+
+        if not all([self.api_key, self.api_secret]):
+            raise AuthException()
+
+        endpoint = "/v1/me/getcollateralaccounts"
+        return self.request(endpoint, params=params)
+
     def getcollateralhistory(self, **params):
         """Get Margin Change History
 
